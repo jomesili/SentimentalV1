@@ -1,0 +1,288 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.UpdateContact"
+  xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+    <Page showHeader="fasle">
+             <content>
+                 <Toolbar>
+                 <Button icon="sap-icon://navigation-left-arrow" press="updateObject" tooltip="Back"/>
+                 <ToolbarSpacer/>
+                    <Text text="Update Contact Details" class="sapUiTitleText"/>
+                <ToolbarSpacer/>
+                <Button
+						text="{i18n>UpdateContactButtonText}"
+						type="Accept"
+						tooltip="{i18n>UpdateContactButtonText}"
+						icon="sap-icon://sys-add"
+						press="handleAddObject" />  
+				<Button
+						text="{i18n>DeleteContactButtonText}"
+						type="Reject"
+						tooltip="{i18n>DeleteContactButtonText}"
+						icon="sap-icon://delete"
+						press="deleteObject" />
+                                         
+                
+               
+              </Toolbar>
+           
+   <l:Splitter height="100%" width="100%">
+        <VBox height="100%" width="100%" >
+        
+        <l:Grid  defaultSpan="L6 M12 S12" >
+         <l:content>
+        <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PersonFirstNameText}" />
+                  <Input
+                    id="firstname"
+                    change="getValue"
+                    type="Text"
+                     value="{FIRSTNAME}"
+                    placeholder="Enter firstname ..." />
+                </items>
+              </VBox>
+               <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>SurnameText}" />
+                  <Input
+                    id="surname"
+                    value="{LASTNAME}"
+                    change="getValue"
+                    type="Text"
+                    placeholder="Enter surname ..." />
+                </items>
+                </VBox>
+          
+         </l:content>
+           </l:Grid >
+           
+           <l:Grid defaultSpan="L12 M12 S12">
+           <l:content>
+                <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PositionText}" />
+                  <Input
+                    id="position"
+                    value="{POSITION}"
+                    change="getValue"
+                    type="Text"
+                    placeholder="Enter position ..." />
+                </items>
+                </VBox>
+                
+                </l:content>
+           </l:Grid >
+           
+            
+           <l:Grid defaultSpan="L6 M12 S12" >
+           <l:content>
+               <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>EmailText}" />
+                  <Input
+                    id="emailaddress"
+                    change="getValue"
+                    type="Email"
+                    value="{path:'EMAIL_ADDRESS',
+                        type : '.typeEMail'
+                        }"
+                    placeholder="Enter email ..."
+                     />
+                </items>
+                </VBox>
+                 
+                 <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PersonPhoneNumber}" />
+                  <Input
+                    id="personPhone"
+                    value="{PHONE_NUMBER}"
+                    change="getValue"
+                    type="Tel"
+                    placeholder="Enter phone ..." />
+                </items>
+              </VBox>
+              
+                </l:content>
+           </l:Grid >
+                
+      <layoutData><l:SplitterLayoutData size="65%" resizable="false"  /></layoutData>
+    </VBox>
+    
+    <l:Grid defaultSpan="L12 M12 S12" >
+    <l:content>
+    <VBox height="100%" width="100%">
+    
+    
+    <VBox
+    class="marginBoxContent" >
+    <items>
+      <Label text="{i18n>CompanyNameText}" />
+      <Input
+        id="company"
+        type="Text"
+        change="getValue"
+        value="{COMPANY_NAME}"
+        placeholder="Enter Company name ..."
+        showSuggestion="true"
+        suggest="handleSuggest"
+        suggestionItems="{/ProductCollection}" >
+        <suggestionItems>
+          <core:Item text="{CompanyName}" />
+        </suggestionItems>
+      </Input>
+      <Label text="" />
+    </items>
+  </VBox>
+  
+   <VBox
+    class="marginBoxContent" >
+    <items>
+      <Label text="{i18n>IndustryNameText}" />
+      <Input
+        id="industry"
+        change="getValue"
+        type="Text"
+        value="{INDUSTRY_SECTOR}"
+        placeholder="Enter Industry ..."
+        showSuggestion="true"
+        suggest="handleSuggest"
+        suggestionItems="{/ProductCollection}" >
+        <suggestionItems>
+          <core:Item text="{Industry}" />
+        </suggestionItems>
+        
+      </Input>
+      <Label text="" />
+      
+    </items>
+  
+  </VBox>
+ 
+  
+   <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>CompanyWebsiteText}" />
+                  <Input
+                    id="companyWebsite"
+                    value="{COMPANY_WEBSITE}" 
+                    type="Text"
+                    placeholder="Enter Company website ..." />
+                </items>
+              </VBox>
+      <layoutData><l:SplitterLayoutData size="auto" /></layoutData>
+    </VBox>
+    </l:content>
+    </l:Grid>
+   
+  </l:Splitter>
+  
+  <l:Grid defaultSpan="L12 M12 S12" >
+         <l:content>
+   
+               <HBox>
+               <VBox width="80%">
+               <VBox 
+                class="marginBoxContent" >
+                <items>
+                <Input
+                    id="choiceID"
+                    value="{ID}"
+                    visible= "false"   />
+                    
+                    <Input
+                    id="friendVal"
+                    value="{FRIEND_LEVEL}"
+                    visible= "false"   />
+                    <Input
+                    id="businessVal"
+                    value="{BUISNESS_LEVEL}"
+                    visible= "false"   />
+                
+                  <Label text="{i18n>FriendValueText} - Scale of 1-10, with 10 as best score" />
+                  <RatingIndicator id="friendValue" width="100%" value="{FRIEND_LEVEL}"    maxValue="10"  visualMode="Half" />   
+                </items>
+                </VBox>
+               <VBox
+                class="marginBoxContent" > 
+                <items>
+                  <Label text="{i18n>BusinessValueText} - Scale of 1-10, with 10 as best score" />
+                  <RatingIndicator id="businessValue" value="{BUISNESS_LEVEL}" width="100%"   maxValue="10" visualMode="Half" /> 
+                </items>
+                </VBox>
+                 
+                 <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>CollabRatingText} - Scale of 1-10, with 10 as best score" />
+                 <RatingIndicator id="collabRating" tooltip="Rating Tooltip" maxValue="10" width="100%" value="{COLLABORATE}" visualMode="Half"/>
+ 
+                </items>
+              </VBox>
+              </VBox>
+              <HBox width ="20%">
+              	              <Image id="thumbImg" class="primeImg"  
+							          width="{/imageWidth}" >
+							          <layoutData>
+							            <FlexItemData growFactor="1" />
+							          </layoutData>
+							     </Image>
+              </HBox>
+
+               </HBox>
+               
+               <VBox width="100%" id="uploadVBox"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>FileUploadText}" />
+                  
+                 
+				      
+				    <HBox width= "100%">
+			         <items>
+				          
+				      	<VBox width="100%">
+				      			
+						<u:FileUploader
+						      id="FileLoader"
+						      width="100%"
+						      tooltip="Upload picture of contact"
+						      uploadComplete="handleUploadComplete"
+						      change="handleValueChange"
+						      typeMissmatch="handleTypeMissmatch"
+						      style="Emphasized"
+						      fileType="jpeg,jpg,png"
+						      placeholder="Choose a file for Upload...">
+						      
+						      </u:FileUploader>
+				    
+					    
+				      	
+				      	</VBox>
+			         	<VBox width="30%">
+			         			
+							     </VBox>
+			         	</items>
+              		</HBox>  
+				     
+                 
+                </items>
+              </VBox>
+              
+         
+    </l:content>
+  </l:Grid>
+ 
+             </content>
+
+	</Page>
+</core:View>

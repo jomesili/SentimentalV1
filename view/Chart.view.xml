@@ -1,0 +1,154 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.Chart"
+  xmlns:l="sap.ui.layout"
+  xmlns:vizD="sap.viz.ui5"
+  xmlns:comm="sap.suite.ui.commons"
+   xmlns:viz="sap.viz.ui5.controls"
+    xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+
+    <Page showHeader="false">
+             <content>
+                
+              	<Toolbar>
+              	
+              	    <HBox> 
+                         
+                           
+                    </HBox>
+              	<ToolbarSpacer/>
+				
+                        <Button
+						id="addBtnUpload"
+                        text="{i18n>AddBulkButtonText}"
+						type="Accept"
+						icon="sap-icon://upload"
+						press="handleBulkObject" /> 
+                        <Button
+						id="addBtnMaster"
+                        text="{i18n>AddContactButtonText}"
+						type="Accept"
+						icon="sap-icon://sys-add"
+						press="handleAddObject" />  
+						
+						<Button
+						id="logMaster"
+                        text="{i18n>LogOutButtonText}"
+						type="Default"
+						icon="sap-icon://log"
+						press="handlelogoff" />
+						
+					
+					
+				
+			</Toolbar>
+   
+              
+ 
+      <l:Grid defaultSpan="L12 M12 S12" class="gridMarginTop">
+         <l:content>       
+         <VBox
+                      class="marginBoxContent bg_white"  >
+                      <items>
+                       <Text text="Analysis by companies" class="sapUiTitleTextg"/>
+                      
+                          <viz:Popover id="idPopOverBar"></viz:Popover>
+                         <vizD:Bubble id="idVizFrameBar" uiConfig="{applicationSet:'fiori'}"   width="100%"  />
+    
+                      </items>
+                    </VBox>
+        
+            </l:content>
+  </l:Grid>
+  
+  
+   <l:Grid defaultSpan="L6 M12 S12" class="gridMarginTop">
+         <l:content>  
+        
+       
+      			<VBox class="  bg_white"   >
+                      <items>
+                         <Text text="Top 10 most bankable companies" class="sapUiTitleTextg"/>
+                         <viz:Popover id="idPopOver"></viz:Popover>
+                            <vizD:Line id="idVizFrameColumn" uiConfig="{applicationSet:'fiori'}"  width="100%" />
+                           
+                        
+                      </items>
+                 </VBox>
+				 <VBox  class="  bg_white" >
+				 
+				 	 				<Text text="Ecosystem Distribution" class="sapUiTitleTextg"/>
+				 	 				   
+         								
+		                              <l:Grid defaultSpan="L6 M6 S6" class="gridMarginTop">
+         									<l:content>
+		                              			<vizD:Donut id="idVizFrameDonot1" uiConfig="{applicationSet:'fiori'}"  width="250px" height="150px" />
+		                          	 			<vizD:Donut id="idVizFrameDonot2" uiConfig="{applicationSet:'fiori'}"  width="250px" height="150px"   />
+		                          	 
+		                          	  			<vizD:Donut id="idVizFrameDonot3" uiConfig="{applicationSet:'fiori'}"   width="250px" height="150px"  />
+		                          	 			<vizD:Donut id="idVizFrameDonot4" uiConfig="{applicationSet:'fiori'}"  width="250px" height="150px"  />
+		 			 	  				</l:content>
+  									</l:Grid>
+		 			 	  			 <List
+		 			 	  			 	id="coyContacts"
+									    items="{/DonutCoyService}"
+									    headerText="Contacts"
+									    growing="true"
+									    growingThreshold="1"
+									    noDataText=" " 
+									   
+									    growingScrollToLoad="false">
+									    <StandardListItem
+									      title="{LASTNAME} {FIRSTNAME} "
+									      description="{POSITION}"
+									      icon="{ProductPicUrl}"
+									      iconDensityAware="false"
+									      iconInset="false" />
+									  </List>
+									  <Table
+											id="coyContact"
+											headerText="{Contacts}"
+											items="{/DonutCoyService}"  visible ="false">
+											<columns>
+												<Column>
+													<header><Label text="" /></header>
+												</Column>
+												
+												<Column>
+													<header><Label text="" /></header>
+												</Column> 
+												<Column>
+													<header><Label text="" /></header>
+												</Column> 
+												 
+											</columns>
+											<ColumnListItem
+												type="Navigation"
+												press="handleLineItemPress" >
+												<cells>
+													<Image id="profileImg" class="IconImg" src="data:image/jpeg;base64,' + hexToBase64({IMAGE_CONTENT})"  >
+												          <layoutData>
+												            <FlexItemData growFactor="1" />
+												          </layoutData>
+												     </Image>
+													<Text text="{LASTNAME} {FIRSTNAME}"  />
+													<Text  text="{POSITION}"/>
+													 
+												</cells>
+											</ColumnListItem>
+										</Table>
+		 			 	  	 
+		               
+		           </VBox>
+
+             
+         
+    </l:content>
+  </l:Grid>
+ 
+             
+             </content>
+     
+	</Page>
+
+</core:View>

@@ -1,0 +1,251 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+.sapUiTitleText{
+    font-weight:Bold;
+    font-size:1.5rem;
+   welcomeText
+    margin-left:10px;
+    color:#1F262E;
+}
+
+.sapMTextLineClamp{
+	
+	font-family: 'Open Sans';
+}
+.sapUiTitleTextg{
+    font-weight:Bold;
+    font-size:1.5rem;
+    font-family: 'Open Sans';
+    margin-left:10px;
+    color:#333;
+}
+.sapUiSubTitle{
+    font-weight:Bold;
+    font-size:0.85rem;
+    font-family: 'Open Sans';
+    margin-left:10px;
+    color:#ffffff;
+}
+
+.logo{
+    padding:1rem;
+     margin-left: 50px;
+    margin-right: auto;
+}
+.centre_logo{
+    padding:1rem;
+     margin-top: 30px;
+     
+}
+.sapMShellGlobalOuterBackground {
+background: #b2f4b3; /* Old browsers */
+background: -moz-linear-gradient(top,  #b2f4b3 0%, #3fcc3f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b2f4b3), color-stop(100%,#3fcc3f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #b2f4b3 0%,#3fcc3f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #b2f4b3 0%,#3fcc3f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #b2f4b3 0%,#3fcc3f 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #b2f4b3 0%,#3fcc3f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2f4b3', endColorstr='#3fcc3f',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sapUiUfdShellBackground, .sapMGlobalBackgroundColor {
+background: #d4f7d5; /* Old browsers */
+background: -moz-linear-gradient(top,  #d4f7d5 0%, #dcf7dc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4f7d5), color-stop(100%,#dcf7dc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #d4f7d5 0%,#dcf7dc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4f7d5', endColorstr='#dcf7dc',GradientType=0 ); /* IE6-9 */
+
+}
+
+#__item7-__list1-2 div{
+    background: #d4f7d5; /* Old browsers */
+background: -moz-linear-gradient(top,  #d4f7d5 0%, #dcf7dc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4f7d5), color-stop(100%,#dcf7dc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #d4f7d5 0%,#dcf7dc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #d4f7d5 0%,#dcf7dc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4f7d5', endColorstr='#dcf7dc',GradientType=0 ); /* IE6-9 */
+}
+
+.v-datalabel-group .v-datalabel text{
+    display:none;
+}
+.welcomeText{
+    font-family: 'Open Sans';
+    margin-left:7px;
+}
+
+.bg_white{
+    background-color:#ffffff;
+}
+
+#Empty, #Welcome, #Chart{
+
+    background-image:url('http://www.bmb-services.com/forum/wp-content/uploads/2015/01/01-green.jpg');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+
+}
+
+.bmb_logo{
+    font-family: 'Open Sans';
+    font-size:3rem;
+    color:#ffffff;
+}
+
+
+.message_big{
+    font-family: 'Open Sans';
+    font-size:2rem;
+    color:#ffffff;
+}
+
+.message_small{
+    font-family: 'Open Sans';
+    font-size:1rem;
+    color:#ffffff;
+    
+}
+.message_small_black{
+    font-family: 'Open Sans';
+    font-size:1rem;
+    color:#000000;
+    
+}
+
+.circle-white{
+    border-radius: 50%;
+    height:160px;
+    background-color:#ffffff;
+    padding:20px;
+    margin-top:40px;
+}
+
+#AddContact::after {
+  content: "";
+   
+  opacity: 0.5;
+}
+
+#AddContact--friendValue-grip, #AddContact--businessValue-grip, #AddCompanyContact--friendValue-grip, #AddCompanyContact--businessValue-grip{
+    top: -13px;
+    border-radius: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: rgba(153,153,153,0.3);
+}
+
+
+#AddContact--businessValue, #AddContact--friendValue{
+ 
+}
+
+#Chart--idVizFrameBar .v-tooltip-mainDiv::after { 
+    display:block;
+    width:100%;
+    content: "* marks out of 10";
+    border-top-style:dotted;
+    border-top-width:1px;
+    border-top-color:#CCCCFF;
+    font-weight: bold;
+    font-style:italics;
+}
+
+g.v-m-sizeLegend::after{ 
+    display:block;
+    width:100%;
+    content: "*Indicative";
+     
+    font-weight: normal;
+     
+}
+
+.h-lead {
+font-size: 42px;
+height: 44px;
+font-weight:Bold;
+    font-size:1.5rem;
+    font-family: 'Open Sans';
+color:#3F3F3F;
+
+}
+
+.h-lead-sub {
+margin-top:-10px;
+font-size: 15px;
+font-weight: normal;
+font-weight:Bold;
+    font-size:1rem;
+    font-family: 'Open Sans';
+color:#5B636E;
+}
+
+.section-header {
+color: #666;
+border-bottom-color: #d4d4d4;
+font-weight:Bold;
+    font-size:1rem;
+    font-family: 'Open Sans';
+color:#5B636E;
+border-bottom:10px;
+
+}
+
+.section-header-item {
+padding-bottom:45px;
+font-size: 25px;
+height: 24px;
+}
+
+.label-title{
+	
+	width:100px;
+	display:block;
+
+
+    font-size:1rem;
+    font-family: 'Open Sans';
+color:#5B636E;
+	
+}
+
+.label-title-property{
+
+    font-size:1rem;
+    font-family: 'Open Sans';
+color:#5B636E;
+	
+}
+
+#UpdateContact--thumbImg{
+ 
+height: 100px;
+border: 1px solid #000;
+margin: 0px 10px 50px 50px;
+ 
+}
+
+.primeImgH{
+ margin-right:50px;
+ 
+	
+
+}
+
+#ProfileEdit--profileImg, #UpdateContact--thumbImg{
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	width:170px;
+	height:170px;
+	margin-bottom:20px;
+	margin-right:5px;
+	margin-top:20px;
+}
+
+#Chart--idVizFrameDonot1, #Chart--idVizFrameDonot2, #Chart--idVizFrameDonot3, #Chart--idVizFrameDonot4 {
+	margin-left:-25px;
+}

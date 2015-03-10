@@ -1,0 +1,166 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.AddContactChart"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+    <Page showHeader="false">
+             <content>
+                 <Toolbar>
+                     <Button icon="http://www.bmb-services.com/wp-content/uploads/2014/10/LogoBMB.png" />
+              <ToolbarSpacer/>
+              <Text text="Add New Contact" class="sapUiExploredInfo"/>
+                <ToolbarSpacer/>
+               
+              </Toolbar>
+  
+      <l:Grid defaultSpan="L12 M12 S12" class="gridMarginTop">
+         <l:content>       
+        <VBox
+          class="marginBoxContent" >
+          <items>
+            <Label text="{i18n>CompanyNameText}" />
+            <Input
+              id="company"
+              type="Text"
+              placeholder="Enter Company name ..."
+              showSuggestion="true"
+              suggest="handleSuggest"
+              suggestionItems="{/ProductCollection}" >
+              <suggestionItems>
+                <core:Item text="{CompanyName}" />
+              </suggestionItems>
+            </Input>
+          </items>
+        </VBox>
+         <VBox
+          class="marginBoxContent" >
+          <items>
+            <Label text="{i18n>IndustryNameText}" />
+            <Input
+              id="industry"
+              type="Text"
+              placeholder="Enter Industry ..."
+              showSuggestion="true"
+              suggest="handleSuggest"
+              suggestionItems="{/ProductCollection}" >
+              <suggestionItems>
+                <core:Item text="{Industry}" />
+              </suggestionItems>
+
+            </Input>
+
+          </items>
+
+        </VBox>
+         <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>CompanyWebsiteText}" />
+                        <Input
+                          id="companyWebsite"
+                          type="Text"
+                          placeholder="Enter Company website ..." />
+                      </items>
+                    </VBox>
+
+
+                      <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>PersonFirstNameText}" />
+                        <Input
+                          id="firstname"
+                          type="Text"
+                          placeholder="Enter firstname ..." />
+                      </items>
+                    </VBox>
+                     <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>SurnameText}" />
+                        <Input
+                          id="surname"
+                          type="Text"
+                          placeholder="Enter surname ..." />
+                      </items>
+                      </VBox>
+
+
+                     <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>PositionText}" />
+                        <Input
+                          id="position"
+                          type="Text"
+                          placeholder="Enter position ..." />
+                      </items>
+                      </VBox>
+                     <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>EmailText}" />
+                        <Input
+                          id="emailaddress"
+                          type="Email"
+                          placeholder="Enter email ..." />
+                      </items>
+                      </VBox>
+
+                       <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>PersonPhoneNumber}" />
+                        <Input
+                          id="personPhone"
+                          type="Tel"
+                          placeholder="Enter phone ..." />
+                      </items>
+                    </VBox>
+
+                     <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>PositionText}" />
+                        <Slider id="friendValue" value="9" width="100%" min="0" max="10" change="getValue"/>   
+                      </items>
+                      </VBox>
+                     <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>EmailText}" />
+                        <Slider id="businessValue" value="9" width="100%" min="0" max="10" change="getValue" /> 
+                      </items>
+                      </VBox>
+
+                       <VBox
+                      class="marginBoxContent" >
+                      <items>
+                        <Label text="{i18n>PersonRating}" />
+                       <RatingIndicator id="ratingValue" tooltip="Rating Tooltip" maxValue="5" value="2.7" visualMode="Half" change="getValue"/>
+
+                      </items>
+                    </VBox>
+         
+    </l:content>
+  </l:Grid>
+ 
+             </content>
+      <footer>
+			<Bar>
+                            <contentRight>
+					<Button
+						text="{i18n>SaveContactButtonText}"
+						type="Accept"
+						icon="sap-icon://sys-add"
+						press="handleAddObject" />  
+                                         
+                                        <Button
+						text="{i18n>CancelContactButtonText}"
+						icon="sap-icon://decline"
+						press="cancelAddObject" /> 
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

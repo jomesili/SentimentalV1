@@ -1,0 +1,137 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.ProfileEdit"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+    <Page showHeader="fasle">
+             <content>
+                 <Toolbar>
+                 <Button icon="sap-icon://navigation-left-arrow" press="moveToBack" tooltip="Back"/>
+                 <ToolbarSpacer/>
+                    <Text text="Contact Details" class="sapUiTitleText"/>
+                <ToolbarSpacer/>
+                <Button
+						text="{i18n>EditContactButtonText}"
+						type="Accept"
+						tooltip="{i18n>UpdateContactButtonText}"
+						icon="sap-icon://edit"
+						press="updateContact" />  
+				
+                                         
+                
+               
+              </Toolbar>
+           
+  <l:Grid  defaultSpan="L12 M12 S12" >
+         <l:content>
+        <VBox height="100%" width="100%" >
+        
+
+         <HBox width= "100%">
+         <items>
+         	<VBox  class="primeImgH"  height="100%">
+         			<Image id="profileImg" class="primeImg" src="data:image/jpeg;base64,' + hexToBase64({IMAGE_CONTENT})"
+				          width="{/imageWidth}" press="onStdDialogPress" >
+				          <layoutData>
+				            <FlexItemData growFactor="1" />
+				          </layoutData>
+				     </Image>
+				     
+				    
+         	
+         	</VBox>
+         	
+         	<VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  
+                  <Text
+                    id="" text=" " class="h-lead" />
+                  <Text
+                    id="firstname" text="{FIRSTNAME}  {LASTNAME}" class="h-lead" />
+                     
+                   <Text
+                    id="position"  text="{POSITION}" class="h-lead-sub" />
+                </items>
+              </VBox>
+          </items>
+         </HBox>
+
+           
+           		<HBox width = "100%">
+	           		<items>
+	           			
+	           			<VBox width="70%"   class="marginBoxContent" >
+                			<items>
+                				<VBox width="50%" class="section-header" >
+                					<items>
+                						 
+                						<Text id="contactInfor" text="Contact Info" class="section-header-item"/>
+                					</items>
+           						</VBox>
+                				<HBox width = "100%">
+		           					<items>
+		                				<Text text="Email" class="label-title" />
+		                				<Text id="email" text="{EMAIL_ADDRESS}"  class="label-title-property"/>
+		                			</items>
+         						</HBox>
+                				<HBox width = "100%">
+		           					
+		                				<Text  text="Phone" class="label-title" />
+		                				<Text id="phone" text=" {PHONE}"    class="label-title-property"/>
+                					
+         						</HBox>
+                				<HBox width = "100%">
+		           					
+	                					<Text id="firendRate" text="Friend rating"  class="label-title" />
+	                					<RatingIndicator id="friendRating" enabled="false" tooltip="Rating Tooltip" maxValue="10" value="{FRIEND_LEVEL}" visualMode="Half"  />
+			                    	
+			                    </HBox>
+			                    
+			                    <HBox width = "100%">
+		           					
+	                					<Text   text="Business value"  class="label-title"/>
+	                					<RatingIndicator id="BusinesRating" enabled="false" tooltip="Rating Tooltip" maxValue="10" value="{BUISNESS_LEVEL}" visualMode="Half" />
+			                    	
+			                    </HBox>
+			                    
+			                    <HBox width = "100%">
+		           					
+	                					<Text   text="Friend rating"  class="label-title"  />
+	                					<RatingIndicator id="LikelyhoodRating" enabled="false" tooltip="Rating Tooltip" maxValue="10" value="{COLLABORATE}" visualMode="Half"/>
+			                    	
+			                    </HBox>
+			                   
+			                     
+			                   
+
+                				 
+                			</items>
+           				</VBox>
+           				
+           				<VBox width="30%"   class="marginBoxContent" >
+                			<items>
+                			<VBox width="100%" class="section-header" >
+                				<items>
+                				<Text id="coyinfo" text="Company" class="section-header-item"/>
+                				</items>
+           					</VBox>
+                				<Text id="coyname" text="{COMPANY_NAME}"  class="label-title-property"/>
+                				<Text id="coysector" text="{INDUSTRIAL_SECTOR}"  class="label-title-property" />
+                				<Text id="coyaddress" text="{COMPANY_WEBSITE}"  class="label-title-property"/>
+                				
+                				 
+                			</items>
+           				</VBox>
+           				
+	           		</items>
+           		</HBox>
+           		
+           		</VBox>
+           		</l:content>
+  			</l:Grid>
+ 
+             </content>
+
+	</Page>
+</core:View>

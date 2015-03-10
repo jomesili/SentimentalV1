@@ -1,0 +1,62 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Master"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page showHeader="false">
+	
+		
+		
+			 
+			<Image class="logo" 
+          src="http://www.bmb-services.com/wp-content/uploads/2014/10/LogoBMB.png"
+          width="{/imageWidth}" press="handleImage3Press" >
+          <layoutData>
+            <FlexItemData growFactor="1" />
+          </layoutData>
+        </Image>
+           <Text class="welcomeText" text="Sentimental analysis- an overview on the potential of your ecosystem."/>
+
+             <Toolbar> 
+            		
+
+            			<SearchField
+            			placeholder="Company"
+            						 selectionChange="handleSearch"
+            						search="handleSearch"
+            						width="100%" >
+            					</SearchField>
+            					
+            			
+            			</Toolbar>
+			
+    		     
+			
+		
+		<List
+			id="list"
+			mode="{device>/listMode}"
+			select="handleListSelect"
+			items="{/bubbleCoyService}" >
+			<ObjectListItem
+				type="{device>/listItemType}"
+				press="handleListItemPress"
+				title="{COMPANY_NAME}" >
+				<attributes>
+					<ObjectAttribute text="{BuyerName}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'LifecycleStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'LifecycleStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
+						}" />
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+	
+	</Page>
+</core:View>

@@ -1,0 +1,95 @@
+MasterTitle=Companies
+
+BusinessValueText= Business Value to BMB
+
+FriendValueText = Friendship level
+
+DetailTitle=Company Info
+
+StatusTextN=New
+
+StatusTextP=In Process
+
+AddCompanyContactButtonText = New Company Contact
+
+ApproveButtonText=Approve
+
+ApproveDialogTitle=Update this contact
+
+ApproveDialogMsg=Do you want to update this contact now?
+
+ApproveDialogSuccessMsg=The Contact has been updated
+
+CollabRatingText= Partnership Likelyhood?
+
+DeleteDialogTitle=Delete this contact
+
+DeleteDialogMsg=Do you want to delete this contact now?
+
+DeleteDialogSuccessMsg=The Contact has been delete
+
+LineItemTableHeader=Contacts
+
+LineItemTitle=Product
+
+MasterGroupNone=None
+
+MasterGroupStatus=Status
+
+MasterGroupAmount=Sector
+
+AddContactButtonText= New Contact
+
+AddBulkButtonText = Bulk Upload
+
+CompanyNameText = Company Name
+
+IndustryNameText = Industry Sector
+
+CompanyWebsiteText = Company Website
+
+CompanyPhoneText = Company Phone
+
+PersonFirstNameText= First Name
+
+SurnameText = Last Name
+
+PositionText = Position
+
+BusinessValueText = Business Value
+
+EmailText = Email
+
+PersonPhoneNumber = Phone Number
+
+PersonRating = Person Rating
+
+UpdateContactButtonText= Update
+
+SaveContactButtonText= Save
+
+CancelContactButtonText = Cancel
+
+BubbleTitleText=Companies
+
+DeleteContactButtonText= Delete
+
+DeleteSusscessMsgAction = Success in deleting Contact
+
+FailedDeletingMsgAction = Failed deleting contact
+
+FileUploadText = Choose file to upload
+
+UserNameText= Username
+
+PasswordNameText = Password
+
+LoginButtonText = Login
+
+LogOutButtonText = Logout
+
+LineItemTableHeaderPreview = Contacts Preview ...
+
+ImportContactButtonText = Add to Contacts
+
+EditContactButtonText = Edit Contact

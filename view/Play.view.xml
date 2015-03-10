@@ -1,0 +1,90 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.Play"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+    <Page showHeader="false">
+             <content>
+             <HBox  justifyContent="Center" width ="100%">
+                         <Image class="logo" 
+          src="http://www.bmb-services.com/wp-content/uploads/2014/10/LogoBMB.png"
+           press="handleImage3Press" >
+          <layoutData>
+            <FlexItemData growFactor="1" />
+          </layoutData>
+        </Image>       
+            </HBox>
+         
+                 <Toolbar>
+                    
+              <ToolbarSpacer/>
+              <VBox  justifyContent="Center" height="100%">
+                        
+                    
+                    <Label text="Login to manage" class="message_small_black" textAlign="Center" width="100%">
+                    </Label>
+                    </VBox>
+                <ToolbarSpacer/>
+               
+              </Toolbar>
+               
+		
+  
+      <l:Grid defaultSpan="L12 M12 S12" class="gridMarginTop">
+         <l:content>       
+        <VBox
+          class="marginBoxContent" >
+          <items>
+            <Label text=" " />
+            <Input
+              id="username"
+              type="Text"
+              placeholder="{i18n>UserNameText}"> 
+              
+            </Input>
+          </items>
+        </VBox>
+         <VBox
+          class="marginBoxContent" >
+          <items>
+            
+            <Input
+              id="password"
+              type="Password"
+              placeholder="{i18n>PasswordNameText}">
+               
+            </Input>
+            
+            <CheckBox text="Keep me signed in" id="keepLogged" selected="false" select="checkState"/>
+               
+               <Button
+						text="{i18n>LoginButtonText}"
+						type="Accept"
+						icon="sap-icon://customer"
+						press="handleAddObject"  width="100%"/>
+						
+            <Label text=" " />
+            <Label text="I cant access my account" />
+            
+            <Button
+						text="Request for Account"
+						type="Default"
+						icon="sap-icon://email"
+						press="handleUrlPress"  width="100%"/>
+
+          </items>
+
+        </VBox>
+        
+         
+    </l:content>
+  </l:Grid>
+ 
+             </content>
+      <footer>
+	<Bar>
+        
+      </Bar>
+		</footer>
+	</Page>
+</core:View>

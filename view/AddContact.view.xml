@@ -1,0 +1,214 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.AddContact"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:r="sap.ui.commons"
+  xmlns="sap.m">
+    <Page showHeader="fasle">
+             <content>
+                 <Toolbar>
+                      
+               <Button icon="sap-icon://navigation-left-arrow" press="cancelAddObject"/>
+                 <ToolbarSpacer/>
+              <Text text="New Contact" class="sapUiTitleText"/>
+                <ToolbarSpacer/>
+                <Button
+						text="{i18n>SaveContactButtonText}"
+						type="Accept"
+						icon="sap-icon://accept"
+						press="handleAddObject" />  
+                                         
+               <Button
+						text="{i18n>CancelContactButtonText}"
+						icon="sap-icon://decline"
+						press="cancelAddInputs" /> 
+               
+              </Toolbar>
+ 
+         
+         
+   <l:Splitter height="100%" width="100%">
+        <VBox height="100%" width="100%" >
+        
+        <l:Grid  defaultSpan="L6 M12 S12" >
+         <l:content>
+        <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PersonFirstNameText}*" />
+                  <Input
+                    id="firstname"
+                    change="getValue"
+                    type="Text"
+                    placeholder="Enter firstname ..." />
+                </items>
+              </VBox>
+               <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>SurnameText}*" />
+                  <Input
+                    id="surname"
+                    change="getValue"
+                    type="Text"
+                    placeholder="Enter surname ..." />
+                </items>
+                </VBox>
+          
+         </l:content>
+           </l:Grid >
+           
+           <l:Grid defaultSpan="L12 M12 S12">
+           <l:content>
+                <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PositionText}" />
+                  <Input
+                    id="position"
+                    change="getValue"
+                    type="Text"
+                    placeholder="Enter position ..." />
+                </items>
+                </VBox>
+                
+                </l:content>
+           </l:Grid >
+           
+            
+           <l:Grid defaultSpan="L6 M12 S12" >
+           <l:content>
+               <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>EmailText}*" />
+                  <Input
+                    id="emailaddress"
+                    change="getValue"
+                    type="Email"
+                    placeholder="Enter email ..."
+                     />
+                </items>
+                </VBox>
+                 
+                 <VBox width="100%"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>PersonPhoneNumber}" />
+                  <Input
+                    id="personPhone"
+                    change="getValue"
+                    type="Tel"
+                    placeholder="Enter phone ..." />
+                </items>
+              </VBox>
+              
+                </l:content>
+           </l:Grid >
+                
+      <layoutData><l:SplitterLayoutData size="65%" resizable="false" /></layoutData>
+    </VBox>
+    
+    <l:Grid defaultSpan="L12 M12 S12" >
+    <l:content>
+    <VBox height="100%" width="100%">
+    
+    
+    <VBox
+    class="marginBoxContent" >
+    <items>
+      <Label text="{i18n>CompanyNameText}*" />
+      <Input
+        id="company"
+        type="Text"
+        change="getValue"
+        placeholder="Enter Company name ..."
+        showSuggestion="true"
+        suggest="handleSuggest"
+        suggestionItems="{/bubbleCoyService}" >
+        <suggestionItems>
+          <core:Item text="{COMPANY_NAME}" />
+        </suggestionItems>
+      </Input>
+      <Label text="" />
+    </items>
+  </VBox>
+    
+   <VBox
+    class="marginBoxContent" >
+    <items>
+      <Label text="{i18n>IndustryNameText}" />
+      
+      <Select
+          width="100%"
+          id="industry"
+          items="{
+            path: 'SectorModel',
+            sorter: { path: 'Name' }
+          }">
+          <core:Item key="{ProductId}" text="{FIELD1}" />
+        </Select>
+      
+      <Label text="" />
+      
+    </items>
+  
+  </VBox>
+ 
+  
+   <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>CompanyWebsiteText}*" />
+                  <Input
+                    id="companyWebsite"
+                    type="Text"
+                    placeholder="Enter Company website ..." />
+                </items>
+              </VBox>
+      <layoutData><l:SplitterLayoutData size="auto" /></layoutData>
+    </VBox>
+    </l:content>
+    </l:Grid>
+   
+  </l:Splitter>
+            
+ 
+  
+  <l:Grid defaultSpan="L12 M12 S12" >
+         <l:content>
+   
+               <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>FriendValueText} - Scale of 1-10, with 10 as best score" />
+                  <r:Slider id="friendValue" value="1" width="100%" min="0" max="10" change="getValue" stepLabels="true" totalUnits= "5" smallStepWidth= "1"/>   
+                <Label text="" />
+                    
+                </items>
+                </VBox>
+               <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>BusinessValueText} - Scale of 1-10, with 10 as best score" />
+                  <r:Slider id="businessValue" value="1" width="100%" min="0" max="10"  change="getValue" stepLabels="true" totalUnits= "5" smallStepWidth= "1"/> 
+                    <Label text="" />
+                    
+                </items>
+                </VBox>
+                 
+                 <VBox
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>CollabRatingText} - Scale of 1-10, with 10 as best score" />
+                 <RatingIndicator id="collabRating" tooltip="Rating Tooltip" maxValue="10" value="1" visualMode="Half" change="getValue"/>
+                    <Label text="" />
+                </items>
+              </VBox>
+         
+    </l:content>
+  </l:Grid>
+ 
+             </content>
+	</Page>
+</core:View>

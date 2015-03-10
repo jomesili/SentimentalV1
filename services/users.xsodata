@@ -1,0 +1,3 @@
+service namespace "sap.hana.contact.service" {
+	"SYSTEM"."USERS" as "Userlist";
+}

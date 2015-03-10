@@ -1,0 +1,154 @@
+<core:View
+  controllerName="sap.ui.demo.myFiori.view.FileUploader"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:u="sap.ui.unified"
+  xmlns="sap.m">
+    <Page showHeader="fasle">
+             <content>
+                 <Toolbar>
+                 <Button icon="sap-icon://navigation-left-arrow" press="updateObject" tooltip="Back"/>
+                 <ToolbarSpacer/>
+                    <Text text="Contact Import" class="sapUiTitleText"/>
+                <ToolbarSpacer/>
+                <Button
+						text="{i18n>ImportContactButtonText}"
+						type="Accept"
+						tooltip="{i18n>ImportContactButtonText}"
+						icon="sap-icon://sys-add"
+						press="startNew" />  
+				<Button
+						text="Cancel"
+						type="Default"
+						tooltip="{i18n>ImportContactButtonText}"
+						icon="sap-icon://sys-cancel"
+						press="updateObject" /> 
+                                         
+                
+               
+              </Toolbar>
+           
+   <l:Splitter height="100%" width="100%">
+         <l:Grid  defaultSpan="L12 M12 S12" >
+         <l:content>
+        	
+        	 <Table
+        	 width="100%"
+        	 inset="false"
+			id="BatchTable"
+			headerText="{i18n>LineItemTableHeaderPreview}"
+			items="{/d/results}"
+			visibleRowCount= "10">
+			<columns>
+				<Column>
+					<header><Label text="Company name" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Website" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Sector" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Firstname" /></header>
+				</Column>
+				<Column>
+					<header><Label text="lastname" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Position" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Email" /></header>
+				</Column>
+				<Column>
+					<header><Label text="Phone" /></header>
+				</Column>
+				
+				
+			</columns>
+			<ColumnListItem
+				
+				press="handleLineItemPress" >
+				<cells>
+					<Text text="{COMPANY_NAME}"/>
+					<Text text="{COMPANY_WEBSITE}"/>
+					<Text text="{INDUSTRY_SECTOR}"/>
+					<Text text="{FIRSTNAME}"/>
+					<Text text="{LASTNAME}"/>
+					<Text text="{EMAIL_ADDRESS}"/>
+					<Text text="{PHONE}"/>
+					<Text text="{POSITION}"/>
+					 
+					
+					
+				</cells>
+			</ColumnListItem>
+		</Table>
+        	
+        	<Button
+						text="Clear"
+						type="Default"
+						tooltip="{i18n>ImportContactButtonText}"
+						icon="sap-icon://refresh"
+						press="cancelUpload" />  
+               </l:content>
+    </l:Grid>
+   
+  </l:Splitter>
+  
+  <l:Grid defaultSpan="L12 M12 S12" >
+         <l:content>
+  <HBox width="100%" id="uploadHBox"
+                class="marginBoxContent" >
+                <items>
+                    <Button
+                    icon="sap-icon://save"
+				      text="All seems OK, save to contacts"
+				      press="doDataUpload"/>
+                  
+                     <Button
+                     icon="sap-icon://redo"
+				      text="I want to change a few things"
+				      press="doDataWipe"/>
+                 
+                </items>
+              </HBox>
+  
+        <VBox width="100%" id="uploadVBox"
+                class="marginBoxContent" >
+                <items>
+                  <Label text="{i18n>FileUploadText}" />
+                  
+                  <u:FileUploader
+				      id="FileLoader"
+				     width="100%"
+				      tooltip="Upload your .csv file to server"
+				      uploadComplete="handleUploadComplete"
+				      change="handleValueChange"
+				      typeMissmatch="handleTypeMissmatch"
+				      style="Emphasized"
+				      fileType="csv"
+				      placeholder="Choose a file for Upload...">
+				       
+				   </u:FileUploader>
+				    <Button
+				      text="Upload File"
+				      press="doFileUpload2"/>
+				      
+				      
+				     
+                 
+                </items>
+              </VBox>
+              
+               
+              
+              
+    </l:content>
+  </l:Grid>
+ 
+             </content>
+
+	</Page>
+</core:View>

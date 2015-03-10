@@ -1,0 +1,9 @@
+{
+"exposed":true,
+"default_file": "index.html",
+"enable_etags" : false,
+"force_ssl" : false,     
+"prevent_xsrf" : true,     
+"authentication" : null,
+"anonymous_connection": "V1::access"
+}

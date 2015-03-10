@@ -1,0 +1,44 @@
+<core:View
+        controllerName="sap.ui.demo.myFiori.view.Welcome"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" 
+        xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="fasle">
+             <content>
+                 <Toolbar>
+                    
+              </Toolbar>
+                <HBox  justifyContent="Center" width ="100%">
+                    <VBox  justifyContent="Center" height="100%">
+                        
+                     <Label text="Welcome" class="bmb_logo" textAlign="Center" width="100%">
+                    </Label>
+                    <Label text="Sentimental Analysis App V1" class="message_big" textAlign="Center" width="100%">
+                    </Label>
+                    <Label text="Bring powerful insights to your ecosystem " class="message_small" textAlign="Center" width="100%">
+                    </Label>
+                    </VBox>
+                   
+                    
+                </HBox>
+                
+                        <HBox  justifyContent="Center"  width="100%">
+                        <HBox  justifyContent="Center"  class="circle-white" >
+                            <Image class="centre_logo"  src="http://www.bmb-services.com/wp-content/uploads/2014/10/LogoBMB.png" width="{/imageWidth}"></Image>
+                        </HBox>
+                            
+                        </HBox>
+                        
+                 <Label id="swipper" class="message_small" textAlign="Center" width="100%">
+                    </Label>
+                   
+               </content>
+            <footer>
+			<Bar>
+        <contentRight>
+          <Label text="Copyright 2015 BMB-Services"></Label>
+        </contentRight>
+        </Bar>
+		</footer>
+	</Page>
+</core:View>
